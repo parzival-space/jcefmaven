@@ -29,5 +29,5 @@ if curl --output /dev/null --silent --fail -r 0-0 "$targetUrl"; then
 fi
 
 echo "Pushing $artifactId-$version..."
-mvn gpg:sign-and-deploy-file -Durl=$stageRepoUrl -DrepositoryId=$repoId -DpomFile=$artifactId-$version.pom -Dfile=$artifactId-$version.jar -Djavadoc=$artifactId-$version-javadoc.jar -Dsources=$artifactId-$version-sources.jar
+mvn deploy:deploy-file -Durl=$stageRepoUrl -DrepositoryId=$repoId -DpomFile=$artifactId-$version.pom -Dfile=$artifactId-$version.jar -Djavadoc=$artifactId-$version-javadoc.jar -Dsources=$artifactId-$version-sources.jar
 
