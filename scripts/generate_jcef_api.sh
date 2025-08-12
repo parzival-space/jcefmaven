@@ -17,8 +17,8 @@ mkdir dl
 cd dl
 
 #Fetch artifact
-echo "Fetching artifact for $download_url_macosx_amd64..."
-curl -s -L -o artifact.tar.gz $download_url_macosx_amd64
+echo "Fetching artifact for $download_url_linux_amd64..."
+curl -s -L -o artifact.tar.gz $download_url_linux_amd64
 
 #Extract artifact
 echo "Extracting..."
@@ -34,7 +34,7 @@ cd api
 
 #Relocate and prune the files for maven packaging
 echo "Building api binaries..."
-cp ../dl/bin/jcef_app.app/Contents/Java/jcef.jar jcef.jar
+cp ../dl/bin/jcef.jar jcef.jar
 unzip jcef.jar
 rm jcef.jar
 cp ../dl/LICENSE.txt LICENSE.txt
